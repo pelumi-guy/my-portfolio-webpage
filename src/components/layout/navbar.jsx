@@ -1,8 +1,10 @@
 import React from "react";
+// import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import $ from "jquery";
 
-import logo1 from "../img/male1.png";
-import logo2 from "../img/male.png";
+import logo1 from "../../assets/images/male1.png";
+import logo2 from "../../assets/images/male.png";
 
 class Navbar extends React.Component {
   constructor() {
@@ -16,7 +18,10 @@ class Navbar extends React.Component {
     const nav = $("nav");
     let navHeight = nav.outerHeight();
 
-    $(".navbar-toggler").on("click", function() {
+    const location = window.location.pathname
+    // console.log({location: window.location});
+
+    $(".navbar-toggler").on("click", function () {
       if (!$("#mainNav").hasClass("navbar-reduce")) {
         $("#mainNav").addClass("navbar-reduce");
       }
@@ -27,7 +32,7 @@ class Navbar extends React.Component {
       offset: navHeight
     });
 
-    $(".js-scroll").on("click", function() {
+    $(".js-scroll").on("click", function () {
       $(".navbar-collapse").collapse("hide");
     });
 
@@ -51,10 +56,10 @@ class Navbar extends React.Component {
       }
     });
 
-    $('a.js-scroll[href*="#"]:not([href="#"])').on("click", function() {
+    $('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
       if (
         window.location.pathname.replace(/^\//, "") ===
-          this.pathname.replace(/^\//, "") &&
+        this.pathname.replace(/^\//, "") &&
         window.location.hostname === this.hostname
       ) {
         var target = $(this.hash);
@@ -74,7 +79,7 @@ class Navbar extends React.Component {
       }
     });
 
-    $(".js-scroll").on("click", function() {
+    $(".js-scroll").on("click", function () {
       $(".navbar-collapse").collapse("hide");
     });
   }
@@ -86,13 +91,13 @@ class Navbar extends React.Component {
         id="mainNav"
       >
         <div className="container">
-          <a className="navbar-brand js-scroll" href="#page-top">
+          <Link className="navbar-brand js-scroll active" to="/">
             <img
               src={this.state.logo}
               alt="logo"
               style={{ maxWidth: "100px" }}
             />
-          </a>
+          </Link>
           <button
             className="navbar-toggler collapsed"
             type="button"
@@ -112,23 +117,61 @@ class Navbar extends React.Component {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link js-scroll active" href="#home">
-                  Home
+                <a className="nav-link js-scroll" href="#home">
                 </a>
+                <Link to='/home#home' style={{ textDecoration: 'none' }}>
+                  <div className="nav-link js-scroll">
+                    Home
+                  </div>
+                </ Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link js-scroll" href="#about">
-                  About
                 </a>
+                <Link to='/home#about' style={{ textDecoration: 'none' }}>
+                  <div className="nav-link js js-scroll">
+                    About
+                  </div>
+                </ Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link js-scroll" href="#work">
-                  Work
                 </a>
+                <Link to='/home#work' style={{ textDecoration: 'none' }}>
+                  <div className="nav-link js-scroll">
+                    Projects
+                  </div>
+                </ Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link js-scroll" href="#contact">
-                  Contact
+                </a>
+                <Link to='/home#contact' style={{ textDecoration: 'none' }}>
+                  <div className="nav-link js-scroll">
+                    Contact
+                  </div>
+                </ Link>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link js-scroll" href='#!'>
+                </a>
+                <a className="nav-link js-scroll" href='https://docs.google.com/document/d/189lnGO1DcU6kJwMhD-yCdDrW6NWy3svkqhhkH7-LFcI/edit?usp=sharing'
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <div className="">
+                    Resume
+                  </div>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link js-scroll" href='#!'>
+                </a>
+                <a className="nav-link js-scroll" href='https://medium.com/@polalekan'
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <div className="">
+                    Blog
+                  </div>
                 </a>
               </li>
             </ul>

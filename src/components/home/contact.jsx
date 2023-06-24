@@ -1,5 +1,5 @@
 import React from "react";
-import imageOverlay from "../img/earth.jpg";
+import imageOverlay from "../../assets/images/earth.jpg";
 
 class Contact extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class Contact extends React.Component {
                       </div>
                       <div>
                         <form
-                          action="https://formspree.io/xdoeonlo"
+                          action="https://formspree.io/f/mnqkaqal"
                           method="POST"
                           className="contactForm"
                         >
@@ -102,12 +102,12 @@ class Contact extends React.Component {
                         <h5 className="title-left">Get in Touch</h5>
                       </div>
                       <div className="more-info">
-                        <p className="lead">
+                        <p className="lead text-dark clear-text">
                           Whether you want to get in touch, talk about a project
                           collaboration, or just say hi, I'd love to hear from
                           you.
                           <br />
-                          Simply fill the from and send me an email.
+                          Simply fill the from and send me a message.
                         </p>
                         {/* <!-- <ul class="list-ico">
                                 <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
@@ -119,18 +119,18 @@ class Contact extends React.Component {
                         <ul>
                           <li>
                             <a
-                              href=""
+                              href="https://twitter.com/one_pelumi_guy"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
                               <span className="ico-circle">
-                                <i className="ion-social-codepen"></i>
+                                <i className="ion-social-twitter"></i>
                               </span>
                             </a>
                           </li>
                           <li>
                             <a
-                              href=""
+                              href="https://github.com/pelumi-guy"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -141,7 +141,7 @@ class Contact extends React.Component {
                           </li>
                           <li>
                             <a
-                              href=""
+                              href="https://www.linkedin.com/in/oluwapelumi-olalekan-272b00153/"
                               target="_blank"
                               rel="noopener noreferrer"
                             >

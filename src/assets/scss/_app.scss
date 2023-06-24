@@ -1,0 +1,10 @@
+@import "./variables";
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// import component styles
+@import "./components/stars";
+@import "./components/starwars";
+@import "./pages/legacy";
+
+// @import "../../../node_modules/bootstrap/scss/bootstrap";

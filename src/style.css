@@ -2,8 +2,9 @@
 GENERAL STYLING
 */
 body {
-  background-color: #f5f5f5!important;
-  color: #4e4e4e!important;
+  /* background-color: #f5f5f5!important; */
+  background-color: black;
+  color: #4e4e4e !important;
 }
 
 h1,
@@ -143,6 +144,10 @@ a:hover {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+h4.title-a {
+  font-size: 2.5rem;
 }
 
 .subtitle-a {
@@ -347,7 +352,7 @@ a:hover {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #fff;
+  /* background: #fff; */
 }
 
 #preloader:before {
@@ -728,6 +733,7 @@ PORTFOLIO
 
 .work-content .w-more .w-ctegory {
   color: #0078ff;
+  font-size: 0.8rem;
 }
 
 .work-content .w-like {
@@ -817,7 +823,7 @@ footer .copyright {
 }
 
 /*
-CONTACT 
+CONTACT
 */
 
 #sendmessage {
@@ -997,4 +1003,8 @@ BUTTON
   .back-to-top {
     bottom: 15px;
   }
+}
+
+.show-edge {
+  border: 1px solid red;
 }
