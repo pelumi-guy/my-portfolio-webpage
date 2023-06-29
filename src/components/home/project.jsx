@@ -5,7 +5,9 @@ const Project = ({ project }) => {
     <Fragment>
           <div className="col-md-4">
             <div className="work-box">
-              <a href={'#!'}
+              <a href={project.url}
+              target='_blank'
+              rel="noopener noreferrer"
               // data-lightbox="gallery-vmarine"
               >
                 <div className="work-img">
@@ -22,13 +24,24 @@ const Project = ({ project }) => {
                       </div>
                     </div>
                     <div className="col-sm-4">
-                      <div className="w-like">
+                      {/* <div className="w-like">
                         <span className="ion-ios-plus-outline"></span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
               </a>
+
+              <hr />
+
+              <div className="text-center pb-3 mt-0">
+                <a href={project.git_repo}
+                target='_blank'
+                rel="noopener noreferrer"
+                >
+                  Go to Github Repo
+                </a>
+              </div>
             </div>
           </div>
     </Fragment>

@@ -1012,3 +1012,8 @@ body {
   .show-edge {
     border: 1px solid red;
   }
+
+  hr {
+    border: 1px solid $primary;
+    opacity: 30%;
+  }

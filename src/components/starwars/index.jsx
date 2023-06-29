@@ -43,10 +43,17 @@ const StarWars = () => {
 
         <div id="content">
           <p id="title">Episode I</p>
-          <p id="subtitle">THE CODER'S MENACE</p>
+          <p id="subtitle">RISE OF THE LONE CRUSADER</p>
           <br />
           {/* And make it cheesy ! */}
-          <p>Turmoil has engulfed the Galactic Republic as Christopher Kade finishes studying to become a master in his trade.</p>
+          {/* <p>Turmoil has engulfed the Galactic Republic as Christopher Kade finishes studying to become a master in his trade.</p> */}
+          <p>
+            Turmoil engulfs the Galactic Republic as the Lone Crusader embarks on an extraordinary journey. Armed with an unwavering determination, they rise from wrenches and gears to conquer the realm of software engineering. Guided by the force of innovation, they unlock new dimensions of their abilities with each mastered algorithm and defeated bug. As the battle for balance rages on, the Lone Crusader becomes an agent of change, shaping the destiny of the digital universe. With wit and belief in the power of every line of code, they illuminate the darkest reaches of technology.
+            <br />
+            Together, let us witness the rise of the mechanic turned web geek, leaving an indelible mark on the tapestry of the galaxy.
+            <br />
+            May the code be with you, always!
+          </p>
         </div>
       </div>
     </div>
