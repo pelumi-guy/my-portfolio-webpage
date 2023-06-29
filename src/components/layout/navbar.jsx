@@ -87,7 +87,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav
-        className="navbar navbar-b navbar-trans navbar-expand-md fixed-top"
+        className="navbar navbar-b navbar-trans navbar-expand-md fixed-top vw-100"
         id="mainNav"
       >
         <div className="container">
