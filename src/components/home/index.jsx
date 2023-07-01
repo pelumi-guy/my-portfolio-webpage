@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Intro from './intro';
 import About from './about';
-import Portfolio from './portfolio';
+// import Portfolio from './portfolio';
 import Contact from './contact';
 import BackToTop from './back-top';
 import MyPortfolio from './my-portfolio';

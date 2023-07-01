@@ -3,22 +3,41 @@ import React from "react";
 import { HashLink as Link } from 'react-router-hash-link';
 import $ from "jquery";
 
+import lightSaber from "../../assets/images/star-wars-lightsaber.gif";
 import logo1 from "../../assets/images/male1.png";
 import logo2 from "../../assets/images/male.png";
 
 class Navbar extends React.Component {
+  gifLogo = {
+    logo: lightSaber,
+    id: 0
+  }
+
+  colorLogo = {
+    logo: logo1,
+    id: 1
+  }
+
+  bWLogo = {
+    logo: logo2,
+    id: 2
+  }
+
+
   constructor() {
     super();
-    this.state = {
-      logo: logo1
-    };
+    // this.state = {
+    //   logo: logo1
+    // };
+    this.state = { ...this.colorLogo, prevId: 0 }
+    this.timers = [];
   }
 
   componentDidMount() {
     const nav = $("nav");
     let navHeight = nav.outerHeight();
 
-    const location = window.location.pathname
+    // const location = window.location.pathname
     // console.log({location: window.location});
 
     $(".navbar-toggler").on("click", function () {
@@ -44,7 +63,15 @@ class Navbar extends React.Component {
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-trans");
-        this.setState({ logo: logo2 });
+        this.setState({ ...this.bWLogo, prevId: 0 });
+        this.clearAllTimers();
+
+        // Set new timer
+        const regex = /^\/home.*$/;
+        if (regex.test(window.location.pathname)) {
+          this.logoTimer();
+        }
+
       } else {
         document
           .querySelector(".navbar-expand-md")
@@ -52,9 +79,22 @@ class Navbar extends React.Component {
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-reduce");
-        this.setState({ logo: logo1 });
+        // this.setState({ logo: logo1 });
+        this.setState({ ...this.colorLogo, prevId: 0 });
+        this.clearAllTimers();
+
+        //Set new timer
+        const regex = /^\/home.*$/;
+        if (regex.test(window.location.pathname)) {
+          this.logoTimer();
+        }
       }
     });
+
+    const regex = /^\/home.*$/;
+    if (regex.test(window.location.pathname)) {
+      this.logoTimer();
+    }
 
     $('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
       if (
@@ -84,7 +124,55 @@ class Navbar extends React.Component {
     });
   }
 
+  clearAllTimers() {
+    for (const timer of this.timers) {
+      clearTimeout(timer);
+    }
+  }
+
+  logoTimer() {
+    // console.log("logoTimer fired");
+    const currId = this.state.id;
+    const prevId = this.state.prevId;
+    // console.log({ currId });
+    if (prevId === 1) {
+      const counter = 6000;
+      const outerTImer = setTimeout(() => {
+        this.setState({ ...this.colorLogo, prevId: currId });
+        this.logoTimer();
+        // const innerTimer = setTimeout(() => this.logoTimer(), counter);
+        // this.timers.push(innerTimer);
+      }
+        , counter);
+      this.timers.push(outerTImer);
+    } else if (prevId === 2) {
+      const counter = 6000;
+      const outerTimer = setTimeout(() => {
+        this.setState({ ...this.bWLogo, prevId: currId });
+        // const innerTimer = setTimeout(() => this.logoTimer(), counter);
+        // this.timers.push(innerTimer);
+        this.logoTimer();
+      }
+        , counter);
+      this.timers.push(outerTimer);
+    } else {
+      const counter = 30000;
+      const outerTimer = setTimeout(() => {
+        const regex = /^\/home.*$/;
+        if (regex.test(window.location.pathname)) {
+          // console.log({ path: window.location.pathname });
+          this.setState({ ...this.gifLogo, prevId: currId });
+          // const innerTimer = setTimeout(() => this.logoTimer(), counter);
+          // this.timers.push(innerTimer);
+          this.logoTimer();
+        }
+      }, counter);
+      this.timers.push(outerTimer)
+    }
+  };
+
   render() {
+
     return (
       <nav
         className="navbar navbar-b navbar-trans navbar-expand-md fixed-top vw-100"
@@ -96,6 +184,7 @@ class Navbar extends React.Component {
               src={this.state.logo}
               alt="logo"
               style={{ maxWidth: "100px" }}
+              className="round-image"
             />
           </Link>
           <button

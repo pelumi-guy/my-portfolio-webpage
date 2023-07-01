@@ -1009,6 +1009,8 @@ body {
     }
   }
 
+  // My additions
+
   .show-edge {
     border: 1px solid red;
   }
@@ -1016,4 +1018,10 @@ body {
   hr {
     border: 1px solid $primary;
     opacity: .5;
+  }
+
+  .round-image {
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
   }
