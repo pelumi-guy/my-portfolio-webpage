@@ -26,7 +26,9 @@ class Contact extends React.Component {
                           className="contactForm"
                         >
                           <div id="sendmessage">
-                            Your message has been sent. Thank you!
+                            Your message has been sent. <br />
+                            You can also send me a message on any of my social media platforms. <br />
+                            Thank you!
                           </div>
                           <div id="errormessage"></div>
                           <div className="row">
@@ -107,7 +109,9 @@ class Contact extends React.Component {
                           collaboration, or just say hi, I'd love to hear from
                           you.
                           <br />
-                          Simply fill the from and send me a message.
+                          Simply fill the form and send me a message.
+                          <br />
+                          Or contact me on any of my social media handles shown below.
                         </p>
                         {/* <!-- <ul class="list-ico">
                                 <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
@@ -117,6 +121,17 @@ class Contact extends React.Component {
                       </div>
                       <div className="socials">
                         <ul>
+                        <li>
+                            <a
+                              href="https://wa.me/+2347014308488"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <span className="ico-circle">
+                                <i className="ion-social-whatsapp"></i>
+                              </span>
+                            </a>
+                          </li>
                           <li>
                             <a
                               href="https://twitter.com/one_pelumi_guy"
