@@ -6,37 +6,37 @@ class About extends React.Component {
     super();
     this.state = {
       skills: [
-        { id: "react", content: "ReactJS", porcentage: "80%", value: "80" },
-        { id: "express", content: "ExpressJS", porcentage: "75%", value: "75" },
+        { id: "react", content: "ReactJS", percentage: "80%", value: "80" },
+        { id: "express", content: "ExpressJS", percentage: "75%", value: "75" },
         {
           id: "sass",
           content: "Sass",
-          porcentage: "70%",
+          percentage: "70%",
           value: "70"
         },
-        { id: "mongodb", content: "MongoDB", porcentage: "75%", value: "75" },
+        { id: "mongodb", content: "MongoDB", percentage: "75%", value: "75" },
         {
           id: "flask",
           content: "Python Flask",
-          porcentage: "75%",
+          percentage: "75%",
           value: "75"
         },
         {
           id: "mysql",
           content: "MySQL",
-          porcentage: "75%",
+          percentage: "75%",
           value: "75"
         },
         {
           id: "bash",
           content: "Bash Scripting",
-          porcentage: "85%",
+          percentage: "85%",
           value: "85"
         },
         {
           id: "aws",
           content: "AWS",
-          porcentage: "60%",
+          percentage: "60%",
           value: "60"
         }
       ],
@@ -97,13 +97,13 @@ class About extends React.Component {
                           <React.Fragment key={skill.id}>
                             <span>{skill.content}</span>{" "}
                             <span className="pull-right">
-                              {skill.porcentage}
+                              {skill.percentage}
                             </span>
                             <div className="progress">
                               <div
                                 className="progress-bar"
                                 role="progressbar"
-                                style={{ width: skill.porcentage }}
+                                style={{ width: skill.percentage }}
                                 aria-valuenow={skill.value}
                                 aria-valuemin="0"
                                 aria-valuemax="100"
