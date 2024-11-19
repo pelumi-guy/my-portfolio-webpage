@@ -46,7 +46,7 @@ const Intro = () => {
                   </p>
                   <p className="pt-3">
                     <a
-                      className="btn btn-primary js-scroll px-4"
+                      className="btn btn-primary js-scroll px-4 view-my-work"
                       href="#work"
                       role="button"
                     >

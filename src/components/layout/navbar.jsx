@@ -137,7 +137,7 @@ class Navbar extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.bgTheme !== this.props.bgTheme) {
-      console.log("prevprops: ", prevProps);
+      // console.log("prevprops: ", prevProps);
 
       document
         .querySelector(".navbar-expand-md")

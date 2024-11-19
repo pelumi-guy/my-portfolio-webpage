@@ -8,13 +8,14 @@ const DarkModeToggle = () => {
     const handleThemeToggle = () => {
         const isDark = !theme.dark;
         setTheme({ dark: isDark });
+        localStorage.setItem('theme', `${isDark ? 'dark' : 'light'}`);
 
         // Update the CSS class on the body element
-        if (isDark) {
-          document.body.classList.add("dark-theme");
-        } else {
-          document.body.classList.remove("dark-theme");
-        }
+        // if (isDark) {
+        //   document.body.classList.add("dark-theme");
+        // } else {
+        //   document.body.classList.remove("dark-theme");
+        // }
         // setTheme((prevState) => ({
         //     dark: prevState.dark ? false : true
         // }));
@@ -57,7 +58,7 @@ const DarkModeToggle = () => {
 
     return (
         <div className='dark-mode-toggle'>
-            <input type="checkbox" id="bb8-checkbox" className='toggle-input' onChange={handleThemeToggle} />
+            <input type="checkbox" id="bb8-checkbox" className='toggle-input' onChange={handleThemeToggle} checked={!theme.dark} />
 
             <label htmlFor="bb8-checkbox" className="switch toggle">
                 <div className="bb8">

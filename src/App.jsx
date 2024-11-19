@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
+import ThemeContext from './context/ThemeProvider.jsx';
 
 // import main scss
 import './assets/scss/main.scss';
@@ -26,6 +27,18 @@ import AppRoutes from './Routes/Routes';
 
 
 function App() {
+    const { theme, setTheme } = useContext(ThemeContext);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === "light") {
+            setTheme({ dark: false });
+        } else {
+            setTheme({ dark: true });
+        }
+    }, [])
+
     return (
         <Fragment>
             <AppRoutes />

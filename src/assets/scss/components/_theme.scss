@@ -22,10 +22,14 @@
 
 .stroked-text {
     /* Fill color */
-    -webkit-text-stroke: 2px $primary;
+    -webkit-text-stroke: 1px $primary;
     /* Outline width and color */
-    text-stroke: 2px $primary;
+    text-stroke: 1px $primary;
     /* For non-webkit support (not widely adopted) */
+}
+
+.hover-effect {
+    transition: all 0.2s ease-in-out;
 }
 
 .hover-effect:hover {

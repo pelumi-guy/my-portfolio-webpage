@@ -52,7 +52,10 @@ const Project = ({ project }) => {
                 target='_blank'
                 rel="noopener noreferrer"
                 >
+                  <span className={`text-${textTheme} hover-effect`}>
                   Go to Github Repo
+                  </span>
+
                 </a>
               </div>
             </div>
