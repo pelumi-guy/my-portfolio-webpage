@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ThemeContext from '../../context/ThemeProvider';
 import Intro from './intro';
 import About from './about';
@@ -10,10 +10,20 @@ import DarkModeToggle from '../darkModeToggle';
 
 const Home = () => {
   const { theme } = useContext(ThemeContext);
+  const [ selectedTheme, setSelectedTheme ] = useState("");
+
+
+  useEffect(() => {
+    const updateTheme = () => {
+      const newTheme = theme.dark ? "dark" : "light";
+      setSelectedTheme(newTheme);
+    }
+
+    updateTheme();
+  }, [theme]);
 
   return (
-    // <div className={`${theme.dark ? 'bg-dark' : 'bg-white'}`}>
-    <div>
+    <div className={`bg-${selectedTheme} smooth-transition`}>
        <Intro />
         <About />
         {/* <Portfolio /> */}

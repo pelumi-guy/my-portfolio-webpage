@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import ThemeContext from '../../context/ThemeProvider';
 import Project from './project';
 
 // Import thumbnails
@@ -10,7 +11,21 @@ import airbnb from "../../assets/images/airbnb.png";
 import simple_shell from "../../assets/images/simple_shell.png"
 import tweet_clipper from "../../assets/images/tweet_clipper.png"
 
+
 const MyPortfolio = () => {
+  const { theme } = useContext(ThemeContext);
+
+  const [bgTheme, setBGTheme] = useState("");
+  const [textTheme, setTextTheme] = useState("");
+
+
+  useEffect(() => {
+    const newBGTheme = theme.dark ? "dark" : "light";
+    setBGTheme(newBGTheme);
+
+    const newTextTheme = theme.dark ? "light" : "dark";
+    setTextTheme(newTextTheme);
+  }, [theme]);
 
   const frontEnd = [
     {
@@ -86,12 +101,12 @@ const MyPortfolio = () => {
   return (
     <section id="work" className="portfolio-mf sect-pt4 route">
       <div className="container">
-        <div className="row">
+        <div className="row mb-0">
           <div className="col-sm-12">
             <div className="title-box text-center">
-              <h3 className="title-a">Projects</h3>
-              <p className="subtitle-a">
-              Below are some of the notable projects I have worked on in my journey as a software engineer
+              <h3 className={`title-a text-${textTheme}`}>Projects</h3>
+              <p className={`subtitle-a text-${textTheme}`}>
+                Below are some of the notable projects I have worked on in my journey as a software engineer
               </p>
               <div className="line-mf"></div>
             </div>
@@ -99,30 +114,30 @@ const MyPortfolio = () => {
         </div>
 
         <div className="row">
-          <h4 className="title-a col-12 text-center mb-1">Front End</h4>
-          <div className="row justify-content-center">
-          {frontEnd.map((project, i) => {
-            return (<Project project={project} key={i} />);
-          })}
+          <h4 className={`title-a col-12 text-center mb-1 text-${textTheme}`}>Front End</h4>
+          <div className="row justify-content-center d-flex">
+            {frontEnd.map((project, i) => {
+              return (<Project project={project} key={i} />);
+            })}
           </div>
         </div>
 
-        <div className="row">
-          <h4 className="title-a col-12 text-center mb-1">Back End / Full Stack</h4>
+        <div className="row mt-5">
+          <h4 className={`title-a col-12 text-center mb-1 text-${textTheme}`}>Back End / Full Stack</h4>
           <div className="row justify-content-center">
-          {backEnd.map((project, i) => {
-            return (<Project project={project} key={i} />);
-          })}
+            {backEnd.map((project, i) => {
+              return (<Project project={project} key={i} />);
+            })}
           </div>
         </div>
 
 
-        <div className="row">
-          <h4 className="title-a col-12 text-center mb-1">Miscellaneous</h4>
+        <div className="row mt-5">
+          <h4 className={`title-a col-12 text-center mb-1 text-${textTheme}`}>Miscellaneous</h4>
           <div className="row justify-content-center">
-          {miscellaneous.map((project, i) => {
-            return (<Project project={project} key={i} />);
-          })}
+            {miscellaneous.map((project, i) => {
+              return (<Project project={project} key={i} />);
+            })}
           </div>
         </div>
 

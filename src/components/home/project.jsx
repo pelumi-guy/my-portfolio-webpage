@@ -1,10 +1,23 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext, useState, useEffect } from 'react';
+import ThemeContext from '../../context/ThemeProvider';
 
 const Project = ({ project }) => {
+  const { theme } = useContext(ThemeContext);
+  const [ bgTheme, setBGTheme ] = useState("");
+  const [ textTheme, setTextTheme ] = useState("");
+
+
+  useEffect(() => {
+      const newBGTheme = theme.dark ? "dark" : "light";
+      setBGTheme(newBGTheme);
+
+      const newTextTheme = theme.dark ? "light" : "dark";
+      setTextTheme(newTextTheme);
+  }, [theme]);
   return (
     <Fragment>
           <div className="col-md-4">
-            <div className="work-box">
+            <div className={`work-box project bg-${bgTheme} ${theme.dark ? 'dark-mode-project' : ''}`}>
               <a href={project.url}
               target='_blank'
               rel="noopener noreferrer"
@@ -16,9 +29,9 @@ const Project = ({ project }) => {
                 <div className="work-content">
                   <div className="row">
                     <div className="col-sm-8">
-                      <h2 className="w-title">{project.title}</h2>
+                      <h2 className={`w-title text-${textTheme} smooth-transition`}>{project.title}</h2>
                       <div className="w-more">
-                        <span className="w-ctegory">
+                        <span className="w-ctegory font-weight-bold">
                           {project.stack}
                         </span>
                       </div>
@@ -34,7 +47,7 @@ const Project = ({ project }) => {
 
               <hr />
 
-              <div className="text-center pb-3 mt-0">
+              <div className="text-center pb-0 mt-0">
                 <a href={project.git_repo}
                 target='_blank'
                 rel="noopener noreferrer"

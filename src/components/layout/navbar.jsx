@@ -24,12 +24,12 @@ class Navbar extends React.Component {
   }
 
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     // this.state = {
     //   logo: logo1
     // };
-    this.state = { ...this.colorLogo, prevId: 0 }
+    this.state = { ...this.colorLogo, prevId: 0, bgTheme: props.bgTheme, textTheme: props.textTheme }
     this.timers = [];
   }
 
@@ -63,6 +63,9 @@ class Navbar extends React.Component {
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-trans");
+        document
+          .querySelector(".navbar-expand-md")
+          .classList.add(`bg-${this.props.bgTheme}`);
         this.setState({ ...this.bWLogo, prevId: 0 });
         this.clearAllTimers();
 
@@ -79,6 +82,12 @@ class Navbar extends React.Component {
         document
           .querySelector(".navbar-expand-md")
           .classList.remove("navbar-reduce");
+        document
+          .querySelector(".navbar-expand-md")
+          .classList.remove(`bg-dark`);
+        document
+          .querySelector(".navbar-expand-md")
+          .classList.remove(`bg-light`);
         // this.setState({ logo: logo1 });
         this.setState({ ...this.colorLogo, prevId: 0 });
         this.clearAllTimers();
@@ -89,6 +98,8 @@ class Navbar extends React.Component {
           this.logoTimer();
         }
       }
+
+
     });
 
     const regex = /^\/home.*$/;
@@ -122,6 +133,44 @@ class Navbar extends React.Component {
     $(".js-scroll").on("click", function () {
       $(".navbar-collapse").collapse("hide");
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.bgTheme !== this.props.bgTheme) {
+      console.log("prevprops: ", prevProps);
+
+      document
+        .querySelector(".navbar-expand-md")
+        .classList.remove(`bg-dark`);
+      document
+        .querySelector(".navbar-expand-md")
+        .classList.remove(`bg-light`);
+
+      if (window.pageYOffset > 50) {
+        document
+          .querySelector(".navbar-expand-md")
+          .classList.add(`bg-${this.props.bgTheme}`);
+      }
+
+      this.setState({
+        bgTheme: this.props.bgTheme,
+        textTheme: this.props.textTheme
+      });
+
+      // window.addEventListener("scroll", () => {
+      //   if (window.pageYOffset > 50) {
+      //     document
+      //       .querySelector(".navbar-expand-md")
+      //       .classList.add("navbar-reduce");
+      //     document
+      //       .querySelector(".navbar-expand-md")
+      //       .classList.remove("navbar-trans");
+      //     document
+      //       .querySelector(".navbar-expand-md")
+      //       .classList.add(`bg-${this.props.bgTheme}`);
+      //   }
+      // });
+    }
   }
 
   clearAllTimers() {
@@ -169,13 +218,23 @@ class Navbar extends React.Component {
       }, counter);
       this.timers.push(outerTimer)
     }
+
+    // window.addEventListener("load", () => {
+    //   document
+    //   .querySelector(".navbar-expand-md")
+    //   .classList.remove("bg-light")
+    // document
+    //   .querySelector(".navbar-expand-md")
+    //   .classList.remove("bg-dark");
+    // })
+
   };
 
   render() {
 
     return (
       <nav
-        className="navbar navbar-b navbar-trans navbar-expand-md fixed-top vw-100"
+        className={`navbar navbar-b navbar-trans navbar-expand-md fixed-top vw-100`}
         id="mainNav"
       >
         <div className="container">

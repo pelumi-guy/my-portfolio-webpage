@@ -7,3 +7,27 @@
     opacity: 0;
     transition: opacity 5s ease-in-out;
 }
+
+.bring-to-front {
+    position: relative;
+    z-index: 1000;
+}
+
+.dark-mode-project {
+    // border: 1px solid #E4EFFF;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2) !important;
+    /* White shadow */
+}
+
+.stroked-text {
+    /* Fill color */
+    -webkit-text-stroke: 2px $primary;
+    /* Outline width and color */
+    text-stroke: 2px $primary;
+    /* For non-webkit support (not widely adopted) */
+}
+
+.hover-effect:hover {
+    color: #7201cc !important;
+}

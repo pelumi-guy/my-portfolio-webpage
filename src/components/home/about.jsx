@@ -1,78 +1,87 @@
-import React from "react";
-// import myImage from "../../assets/images/myImage.png";
+import React, { useState, useContext, useEffect } from 'react';
+import ThemeContext from '../../context/ThemeProvider';
 
-class About extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      skills: [
-        { id: "react", content: "ReactJS", percentage: "80%", value: "80" },
-        { id: "express", content: "ExpressJS", percentage: "75%", value: "75" },
-        {
-          id: "sass",
-          content: "Sass",
-          percentage: "70%",
-          value: "70"
-        },
-        { id: "mongodb", content: "MongoDB", percentage: "75%", value: "75" },
-        {
-          id: "flask",
-          content: "Python Flask",
-          percentage: "75%",
-          value: "75"
-        },
-        {
-          id: "mysql",
-          content: "MySQL",
-          percentage: "75%",
-          value: "75"
-        },
-        {
-          id: "bash",
-          content: "Bash Scripting",
-          percentage: "85%",
-          value: "85"
-        },
-        {
-          id: "aws",
-          content: "AWS",
-          percentage: "60%",
-          value: "60"
-        }
-      ],
-      about_me: [
-        {
-          id: "first-p-about",
-          content:
-            "I'm a Mechanical Engineering graduate from the University of Lagos with a solid foundation in problem-solving and analytical thinking. After completing my studies, I embarked on a rewarding journey in the Telecommunications industry, where I excelled as a Mechanical Engineering Field Maintenance Team Lead. This experience helped me to develop strong leadership skills and a meticulous approach to consistently delivering high-quality results."
-        },
-        {
-          id: "second-p-about",
-          content:
-            "Motivated by my unwavering passion for bringing ideas to life and witnessing projects flourish, I made a career pivot in 2021 and immersed myself fully in the field of Software Engineering. Over the past two years, I have diligently honed my coding skills and significantly expanded my knowledge across a wide range of programming languages and software engineering technologies. I have also successfully completed an IBM Cybersecurity Analyst course and obtained my Associate Degree in Software Engineering through the rigorous one-year ALX-Holberton program, solidifying my expertise in the field."
-        },
-        {
-          id: "third-p-about",
-          content:
-            "As a web developer, I am proficient in a range of web development technologies and frameworks such as HTML5, CSS3, JavaScript, Sass, React JS, Bootstrap, Express JS, MongoDB, Python Flask and MySQL. Leveraging these tools, I have created diverse and innovative products. Throughout my career journey, I have cultivated a keen eye for detail, fostered a collaborative mindset, and maintained an unwavering commitment to delivering exceptional results."
-        },
-        {
-          id: "fourth-p-about",
-          content:
-            "When I'm not writing code or learning about new technologies, you would probably find me in the gym, pumping iron. I believe in maintaining a healthy body and sound mind to stay focused and energized."
-        }
-      ]
-    };
-  }
+const About = () => {
+  const { theme } = useContext(ThemeContext);
+  const [aboutInfo, setAboutInfo] = useState({
+    skills: [
+      { id: "react", content: "ReactJS", percentage: "80%", value: "80" },
+      { id: "express", content: "ExpressJS", percentage: "75%", value: "75" },
+      {
+        id: "sass",
+        content: "Sass",
+        percentage: "70%",
+        value: "70"
+      },
+      { id: "mongodb", content: "MongoDB", percentage: "75%", value: "75" },
+      {
+        id: "flask",
+        content: "Python Flask",
+        percentage: "75%",
+        value: "75"
+      },
+      {
+        id: "mysql",
+        content: "MySQL",
+        percentage: "75%",
+        value: "75"
+      },
+      {
+        id: "bash",
+        content: "Bash Scripting",
+        percentage: "85%",
+        value: "85"
+      },
+      {
+        id: "aws",
+        content: "AWS",
+        percentage: "60%",
+        value: "60"
+      }
+    ],
+    about_me: [
+      {
+        id: "first-p-about",
+        content:
+          "I'm a Mechanical Engineering graduate from the University of Lagos with a solid foundation in problem-solving and analytical thinking. After completing my studies, I embarked on a rewarding journey in the Telecommunications industry, where I excelled as a Mechanical Engineering Field Maintenance Team Lead. This experience helped me to develop strong leadership skills and a meticulous approach to consistently delivering high-quality results."
+      },
+      {
+        id: "second-p-about",
+        content:
+          "Motivated by my unwavering passion for bringing ideas to life and witnessing projects flourish, I made a career pivot in 2021 and immersed myself fully in the field of Software Engineering. Over the past two years, I have diligently honed my coding skills and significantly expanded my knowledge across a wide range of programming languages and software engineering technologies. I have also successfully completed an IBM Cybersecurity Analyst course and obtained my Associate Degree in Software Engineering through the rigorous one-year ALX-Holberton program, solidifying my expertise in the field."
+      },
+      {
+        id: "third-p-about",
+        content:
+          "As a web developer, I am proficient in a range of web development technologies and frameworks such as HTML5, CSS3, JavaScript, Sass, React JS, Bootstrap, Express JS, MongoDB, Python Flask and MySQL. Leveraging these tools, I have created diverse and innovative products. Throughout my career journey, I have cultivated a keen eye for detail, fostered a collaborative mindset, and maintained an unwavering commitment to delivering exceptional results."
+      },
+      {
+        id: "fourth-p-about",
+        content:
+          "When I'm not writing code or learning about new technologies, you would probably find me in the gym, pumping iron. I believe in maintaining a healthy body and sound mind to stay focused and energized."
+      }
+    ]
+  });
 
-  render() {
-    return (
-      <section id="about" className="about-mf sect-pt4 route">
-        <div className="container">
+  const [ bgTheme, setBGTheme ] = useState("");
+  const [ textTheme, setTextTheme ] = useState("");
+
+
+  useEffect(() => {
+      const newBGTheme = theme.dark ? "dark" : "light";
+      setBGTheme(newBGTheme);
+
+      const newTextTheme = theme.dark ? "light" : "dark";
+      setTextTheme(newTextTheme);
+  }, [theme]);
+
+  return (
+    <section id="about" className="about-mf sect-pt4 route">
+        <div className={`container bg-${bgTheme} smooth-transition`}>
           <div className="row">
             <div className="col-sm-12">
-              <div className="box-shadow-full">
-                <div className="row">
+              <div className={`box-shadow-full bg-${bgTheme} smooth-transition`}>
+                <div className={`row bg-${bgTheme} smooth-transition`}>
                   <div className="col-md-6">
                     <div className="row">
                       <div
@@ -92,11 +101,11 @@ class About extends React.Component {
                     </div>
                     <div className="skill-mf">
                       {/* <p className="title-s">Skill</p> */}
-                      {this.state.skills.map(skill => {
+                      {aboutInfo.skills.map(skill => {
                         return (
                           <React.Fragment key={skill.id}>
-                            <span>{skill.content}</span>{" "}
-                            <span className="pull-right">
+                            <span className={`text-${textTheme}`}>{skill.content}</span>{" "}
+                            <span className={`text-${textTheme} pull-right`}>
                               {skill.percentage}
                             </span>
                             <div className="progress">
@@ -117,11 +126,11 @@ class About extends React.Component {
                   <div className="col-md-6">
                     <div className="about-me pt-4 pt-md-0">
                       <div className="title-box-2">
-                        <h5 className="title-left">Meet Pelumi!</h5>
+                        <h5 className={`title-left text-${textTheme}`}>Meet Pelumi!</h5>
                       </div>
-                      {this.state.about_me.map(content => {
+                      {aboutInfo.about_me.map(content => {
                         return (
-                          <p className="lead text-dark clear-text" key={content.id}>
+                          <p className={`lead text-${textTheme} clear-text`} key={content.id}>
                             {content.content}
                           </p>
                         );
@@ -134,8 +143,7 @@ class About extends React.Component {
           </div>
         </div>
       </section>
-    );
-  }
+  )
 }
 
-export default About;
+export default About

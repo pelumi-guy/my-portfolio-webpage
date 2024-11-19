@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Navbar from './navbar';
+import Navbar from './navbarWrapper';
 import Preloader from './preloader';
 
 const Layout = ({ children }) => {
