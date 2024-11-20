@@ -5,36 +5,44 @@ const About = () => {
   const { theme } = useContext(ThemeContext);
   const [aboutInfo, setAboutInfo] = useState({
     skills: [
-      { id: "react", content: "ReactJS", percentage: "80%", value: "80" },
+      { id: "react", content: "ReactJS", percentage: "90%", value: "80" },
+      { id: "next", content: "Next.js", percentage: "80%", value: "90" },
       { id: "express", content: "ExpressJS", percentage: "75%", value: "75" },
+      { id: "asp.net", content: "ASP.NET Core", percentage: "80%", value: "80" },
+      {
+        id: "sql",
+        content: "SQL (Microsoft SQL Server, Postgres, MySQL)",
+        percentage: "75%",
+        value: "75"
+      },
+      { id: "mongodb", content: "MongoDB", percentage: "65%", value: "65" },
       {
         id: "sass",
         content: "Sass",
-        percentage: "70%",
-        value: "70"
+        percentage: "75%",
+        value: "75"
       },
-      { id: "mongodb", content: "MongoDB", percentage: "75%", value: "75" },
       {
         id: "flask",
         content: "Python Flask",
-        percentage: "75%",
-        value: "75"
+        percentage: "60%",
+        value: "60"
       },
       {
-        id: "mysql",
-        content: "MySQL",
-        percentage: "75%",
-        value: "75"
-      },
-      {
-        id: "bash",
-        content: "Bash Scripting",
+        id: "cypress",
+        content: "Cypress",
         percentage: "85%",
         value: "85"
       },
       {
-        id: "aws",
-        content: "AWS",
+        id: "bash",
+        content: "Bash Scripting",
+        percentage: "80%",
+        value: "80"
+      },
+      {
+        id: "azure",
+        content: "Azure Devops",
         percentage: "60%",
         value: "60"
       }
@@ -43,23 +51,23 @@ const About = () => {
       {
         id: "first-p-about",
         content:
-          "I'm a Mechanical Engineering graduate from the University of Lagos with a solid foundation in problem-solving and analytical thinking. After completing my studies, I embarked on a rewarding journey in the Telecommunications industry, where I excelled as a Mechanical Engineering Field Maintenance Team Lead. This experience helped me to develop strong leadership skills and a meticulous approach to consistently delivering high-quality results."
+          "Oluwapelumi Olalekan is a skilled software engineer with a background in Mechanical Engineering from the University of Lagos. After excelling as a Maintenance Team Lead in the telecommunications sector, specializing in hybrid diesel and solar power solutions, he transitioned to software engineering to pursue his passion for building impactful digital solutions.",
       },
       {
         id: "second-p-about",
         content:
-          "Motivated by my unwavering passion for bringing ideas to life and witnessing projects flourish, I made a career pivot in 2021 and immersed myself fully in the field of Software Engineering. Over the past two years, I have diligently honed my coding skills and significantly expanded my knowledge across a wide range of programming languages and software engineering technologies. I have also successfully completed an IBM Cybersecurity Analyst course and obtained my Associate Degree in Software Engineering through the rigorous one-year ALX-Holberton program, solidifying my expertise in the field."
+          "Currently a <span class='font-weight-bold'>Backend Software Engineer at Sterling Bank</span>, he contributes to <span class='font-italic'>Switch by Sterling</span>, a platform providing banking services to Nigerians in the diaspora. He is actively involved in migrating legacy .NET systems to modern .NET 8.0 architectures, optimizing RESTful APIs, and ensuring compliance and maintainability. He also works part-time with <span class='font-weight-bold'>Novodeus</span>, developing full-stack applications using Next.js, and mentors entry-level developers in Cypress."
       },
       {
         id: "third-p-about",
         content:
-          "As a web developer, I am proficient in a range of web development technologies and frameworks such as HTML5, CSS3, JavaScript, Sass, React JS, Bootstrap, Express JS, MongoDB, Python Flask and MySQL. Leveraging these tools, I have created diverse and innovative products. Throughout my career journey, I have cultivated a keen eye for detail, fostered a collaborative mindset, and maintained an unwavering commitment to delivering exceptional results."
+          "Pelumi&apos;s technical expertise includes ASP.NET, ReactJS, Next.js, TypeScript, Express.js, MongoDB, Python Flask, Microsoft SQL Server, Azure DevOps, and CI/CD pipelines. He thrives on solving complex problems, delivering scalable solutions, and empowering teams to achieve exceptional results.",
       },
       {
         id: "fourth-p-about",
         content:
-          "When I'm not writing code or learning about new technologies, you would probably find me in the gym, pumping iron. I believe in maintaining a healthy body and sound mind to stay focused and energized."
-      }
+          "When away from his desk, Pelumi is passionate about fitness and weightlifting, channeling discipline and focus from his gym routine into his professional pursuits.",
+      },
     ]
   });
 
@@ -130,8 +138,8 @@ const About = () => {
                       </div>
                       {aboutInfo.about_me.map(content => {
                         return (
-                          <p className={`lead text-${textTheme} clear-text`} key={content.id}>
-                            {content.content}
+                          <p className={`lead text-${textTheme} clear-text`} key={content.id}
+                            dangerouslySetInnerHTML={{ __html: content.content }}>
                           </p>
                         );
                       })}

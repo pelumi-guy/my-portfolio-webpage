@@ -303,7 +303,7 @@ class Navbar extends React.Component {
               <li className="nav-item">
                 <a className="nav-link js-scroll" href='#!'>
                 </a>
-                <a className="nav-link js-scroll" href='https://docs.google.com/document/d/12y3ax5gJ-jC4zyMBFZ9sE8MJ5Q7TnDwjQb1dOjxQczU/edit?usp=sharing'
+                <a className="nav-link js-scroll" href='https://docs.google.com/document/d/176N_ARpaPOB7V6oNQukdxMZuHvCdLQoHtMp3aXJ-Y6k/edit?usp=sharing'
                   target="_blank"
                   rel="noopener noreferrer">
                   <div className="">

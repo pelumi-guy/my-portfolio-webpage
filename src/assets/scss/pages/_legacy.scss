@@ -179,7 +179,7 @@ GENERAL STYLING
     /* Title Left */
     
     .title-box-2 {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
     }
     
     .title-left {
@@ -694,17 +694,19 @@ GENERAL STYLING
     .skill-mf .progress {
         background-color: #cde1f8;
         margin: .5rem 0 1.2rem 0;
-        border-radius: 0;
+        border-radius: 1rem;
         height: .7rem;
     }
     
     .skill-mf .progress .progress-bar {
         height: .7rem;
         background-color: $primary;
+        border-radius: 1rem;
     }
     
     .clear-text {
         font-weight: 450;
+        font-size: 18px;
     }
     
     .view-my-work:hover {

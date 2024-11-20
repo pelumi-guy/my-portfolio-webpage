@@ -5,13 +5,13 @@ import Project from './project';
 // Import thumbnails
 import pixelart from "../../assets/images/pixel-art-pro.png";
 import emrportal from "../../assets/images/emr-portal.png";
-import gyb from "../../assets/images/gyb.png";
-import shopitty from "../../assets/images/shopitty.png";
+// import gyb from "../../assets/images/gyb.png";
+import shopitty from "../../assets/images/shopitty.jpg";
 import airbnb from "../../assets/images/airbnb.png";
 import simple_shell from "../../assets/images/simple_shell.png"
 import tweet_clipper from "../../assets/images/tweet_clipper.png"
 import novodeus from "../../assets/images/novodeus.png";
-import yard from "../../assets/images/yard.png";
+import yard from "../../assets/images/yard.jpg";
 import binge from "../../assets/images/binge.png";
 
 
@@ -41,7 +41,7 @@ const MyPortfolio = () => {
     {
       title: 'Pixel Art Editor Pro',
       thumbnail: pixelart,
-      stack: 'ReactJS Redux',
+      stack: 'ReactJS, Redux',
       url: 'http://pelumi-guy.github.io/pixel-art-editor_pro',
       git_repo: "https://github.com/pelumi-guy/pixel-art-editor_pro"
     },
@@ -72,14 +72,14 @@ const MyPortfolio = () => {
     {
       title: 'Shopitty NG',
       thumbnail: shopitty,
-      stack: 'MERN Cloudinary Paystack',
+      stack: 'MERN',
       url: 'https://shopitty-ng.onrender.com/',
       git_repo: "https://github.com/pelumi-guy/shopitty-ng"
     },
     {
       title: 'AirBnB Clone',
       thumbnail: airbnb,
-      stack: 'Flask MySQL',
+      stack: 'Flask, MySQL',
       url: 'https://github.com/pelumi-guy/AirBnB_clone',
       git_repo: "https://github.com/pelumi-guy/AirBnB_clone"
     },
