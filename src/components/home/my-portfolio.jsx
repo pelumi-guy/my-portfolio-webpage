@@ -10,6 +10,9 @@ import shopitty from "../../assets/images/shopitty.png";
 import airbnb from "../../assets/images/airbnb.png";
 import simple_shell from "../../assets/images/simple_shell.png"
 import tweet_clipper from "../../assets/images/tweet_clipper.png"
+import novodeus from "../../assets/images/novodeus.png";
+import yard from "../../assets/images/yard.png";
+import binge from "../../assets/images/binge.png";
 
 
 const MyPortfolio = () => {
@@ -29,29 +32,43 @@ const MyPortfolio = () => {
 
   const frontEnd = [
     {
+      title: 'Novodeus',
+      thumbnail: novodeus,
+      stack: 'Next.js',
+      url: 'https://novodeus.co',
+      git_repo: "https://github.com/Tooyosi/gyb"
+    },
+    {
       title: 'Pixel Art Editor Pro',
       thumbnail: pixelart,
-      stack: 'ReactJS Redux Bootstrap Sass',
+      stack: 'ReactJS Redux',
       url: 'http://pelumi-guy.github.io/pixel-art-editor_pro',
       git_repo: "https://github.com/pelumi-guy/pixel-art-editor_pro"
     },
     {
       title: 'EMR Portal',
       thumbnail: emrportal,
-      stack: 'ReactJS Bootstrap Sass',
+      stack: 'ReactJS',
       url: 'http://pelumi-emr-portal.surge.sh/',
       git_repo: "https://github.com/Tooyosi/emr-portal"
-    },
-    {
-      title: 'Grow Your Business - GYB Global',
-      thumbnail: gyb,
-      stack: 'ReactJS Bootstrap Sass',
-      url: 'http://pelumi-test-link.surge.sh/',
-      git_repo: "https://github.com/Tooyosi/gyb"
-    },
+    }
   ]
 
   const backEnd = [
+    {
+      title: 'Binge',
+      thumbnail: binge,
+      stack: 'ASP.NET Core, ReactJS, Microsoft SQL Server',
+      url: 'https://binge.decagon.dev',
+      git_repo: "https://github.com/pelumi-guy/Binge"
+    },
+    {
+      title: 'Yard',
+      thumbnail: yard,
+      stack: 'ASP.NET Core, ReactJS, Microsoft SQL Server',
+      url: 'https://github.com/pelumi-guy/YARD',
+      git_repo: "https://github.com/pelumi-guy/YARD"
+    },
     {
       title: 'Shopitty NG',
       thumbnail: shopitty,
@@ -66,20 +83,13 @@ const MyPortfolio = () => {
       url: 'https://github.com/pelumi-guy/AirBnB_clone',
       git_repo: "https://github.com/pelumi-guy/AirBnB_clone"
     },
-    // {
-    //   title: 'Grow Your Business - GYB Global',
-    //   thumbnail: gyb,
-    //   stack: 'ReactJS Bootstrap Sass',
-    //   url: '#!',
-    //   git_repo: "#!"
-    // },
   ]
 
   const miscellaneous = [
     {
       title: 'TweetClipper',
       thumbnail: tweet_clipper,
-      stack: 'Python Cloudinary Redis',
+      stack: 'Python',
       url: 'https://github.com/pelumi-guy/TweetClipper',
       git_repo: "https://github.com/pelumi-guy/TweetClipper"
     },
@@ -123,7 +133,7 @@ const MyPortfolio = () => {
         </div>
 
         <div className="row mt-5">
-          <h4 className={`title-a col-12 text-center mb-1 text-${textTheme}`}>Back End / Full Stack</h4>
+          <h4 className={`title-a col-12 text-center mb-1 text-${textTheme}`}>Back End — Full Stack</h4>
           <div className="row justify-content-center">
             {backEnd.map((project, i) => {
               return (<Project project={project} key={i} />);

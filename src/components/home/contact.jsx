@@ -9,7 +9,7 @@ const Contact = () => {
   const [textTheme, setTextTheme] = useState("");
 
   useEffect(() => {
-    const newBGTheme = theme.dark ? "transparent" : "";
+    const newBGTheme = theme.dark ? "transparent" : "light";
     setBGTheme(newBGTheme);
 
     const newTextTheme = theme.dark ? "white" : "dark";

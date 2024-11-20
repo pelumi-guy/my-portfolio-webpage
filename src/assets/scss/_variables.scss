@@ -13,7 +13,7 @@ $alertRed: #FF5367;
 $primary: #7201cc;
 $transparent: #00000000;
 // CUSTOM THEME
-$theme-colors: ( "primary": $primary, "black": $black, "white": $white, "muted": $muted, "lightBlue": $lightBlue, "transBlue": $transBlue, "lightOrange":$lightOrange, "alertGreen": $alertGreen, "alertRed": $alertRed, );
+$theme-colors: ( "primary": $primary, "black": $black, "white": $white, "muted": $muted, "lightBlue": $lightBlue, "light": $transBlue, "transBlue": $transBlue, "lightOrange":$lightOrange, "alertGreen": $alertGreen, "alertRed": $alertRed, );
 // Grid breakpoints
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1440px) !default;
 // Grid containers
