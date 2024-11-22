@@ -1055,7 +1055,7 @@ footer .copyright {
         display: block;
         width: 6rem;
         background-color: $white;
-        opacity: 85%;
+        opacity: 0.85 !important;
         border-radius: 50%;
         text-align: center;
     }
