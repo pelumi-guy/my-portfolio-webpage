@@ -26,16 +26,16 @@ function getRandomPosition() {
 
 const StarWars = () => {
   return (
-    <div>
+    <div className=''>
       {starObjs.map((star) => <div className="sw-star" key={star.key}
         style={{ top: star.top, left: star.left }}></div>)}
 
       <section>
         <div className="sw-intro sw-intro-large d-none d-md-block">
-        A long time ago, in a galaxy far, <br /> far away....
+          A long time ago, in a galaxy far, <br /> far away....
         </div>
         <div className="sw-intro sw-intro-small d-block d-md-none">
-        A long time ago, in a galaxy far, <br /> far away....
+          A long time ago, in a galaxy far, <br /> far away....
         </div>
       </section>
 
@@ -48,12 +48,19 @@ const StarWars = () => {
 
         <div id="content">
           <p id="title">Episode I</p>
-          <p id="subtitle">RISE OF THE LONE CRUSADER</p>
+          <p id="subtitle">THE PHANTOM BUG</p>
           <br />
-          {/* And make it cheesy ! */}
-          {/* <p>Turmoil has engulfed the Galactic Republic as Christopher Kade finishes studying to become a master in his trade.</p> */}
           <p>
-            Turmoil engulfs the Galactic Republic as the Lone Crusader embarks on an extraordinary journey. Armed with an unwavering determination, they rise from wrenches and gears to conquer the realm of software engineering. Guided by the force of innovation, they unlock new dimensions of their abilities with each mastered algorithm and defeated bug. As the battle for balance rages on, the Lone Crusader becomes an agent of change, shaping the destiny of the digital universe. With wit and belief in the power of every line of code, they illuminate the darkest reaches of binary galaxies.
+            You&apos;re probably wondering what this is all about. Maybe you got lost looking for memes or a way to illegally stream Star Wars. Either way, you&apos;ve landed on my portfolio webpage. Lucky you!
+            <br />
+            Once a humble engineer tinkering with diesel engines and spreadsheets, I took a one-way hyperspace jump into the galaxy of software development. Now, I&apos;m weaving C#, Javascript and Python code, battling bugs like Sith Lords, and using "the force" (read: caffeine) to optimize APIs that you&apos;ll probably never notice but can&apos;t live without.
+            <br />
+            And hey, don&apos;t hate on Jar Jar Binks. Sure, he&apos;s not the hero we needed, but he&apos;s the comic relief we (probably) deserved.
+            <br />
+            Want to see if this code jockey actually knows what they&apos;re doing? Click the "Home" button above to explore my projects and experience. Navigate wisely, young Padawan... and feel free to reach out if you have any gigs, projects we could collaborate on, or even a good job opportunity for me.
+            <br />
+            See you around. <br />
+            👐🏾
           </p>
         </div>
       </div>

@@ -8,7 +8,7 @@ const About = () => {
       { id: "react", content: "ReactJS", percentage: "90%", value: "80" },
       { id: "next", content: "Next.js", percentage: "80%", value: "90" },
       { id: "express", content: "ExpressJS", percentage: "75%", value: "75" },
-      { id: "asp.net", content: "ASP.NET Core", percentage: "80%", value: "80" },
+      { id: "asp.net", content: "ASP.NET Core", percentage: "85%", value: "85" },
       {
         id: "sql",
         content: "SQL (Microsoft SQL Server, Postgres, MySQL)",
@@ -45,6 +45,12 @@ const About = () => {
         content: "Azure Devops",
         percentage: "60%",
         value: "60"
+      },
+      {
+        id: "power automate",
+        content: "Microsoft Power Automate for desktop",
+        percentage: "85%",
+        value: "85"
       }
     ],
     about_me: [
@@ -66,7 +72,7 @@ const About = () => {
       {
         id: "fourth-p-about",
         content:
-          "When away from his desk, Pelumi is passionate about fitness and weightlifting, channeling discipline and focus from his gym routine into his professional pursuits.",
+          "When away from his desk, Pelumi is passionate about fitness. He believes in the importance of maintaining a healthy body and a sound mind, using his fitness journey to cultivate discipline, focus, and resilience—qualities that translate seamlessly into his professional life.",
       },
     ]
   });
@@ -138,7 +144,7 @@ const About = () => {
                       </div>
                       {aboutInfo.about_me.map(content => {
                         return (
-                          <p className={`lead text-${textTheme} clear-text`} key={content.id}
+                          <p className={`lead text-${textTheme} clear-text `} key={content.id}
                             dangerouslySetInnerHTML={{ __html: content.content }}>
                           </p>
                         );

@@ -17,7 +17,7 @@ const Project = ({ project }) => {
   return (
     <Fragment>
           <div className="col-md-4 mt-3">
-            <div className={`work-box project bg-${bgTheme} ${theme.dark ? 'dark-mode-project' : ''}`}>
+            <div className={`work-box project smooth-transition bg-${bgTheme} ${theme.dark ? 'dark-mode-project' : ''}`}>
               <a href={project.url}
               target='_blank'
               rel="noopener noreferrer"
