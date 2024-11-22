@@ -29,7 +29,12 @@ class Navbar extends React.Component {
     // this.state = {
     //   logo: logo1
     // };
-    this.state = { ...this.colorLogo, prevId: 0, bgTheme: props.bgTheme, textTheme: props.textTheme }
+    this.state = {
+      ...this.colorLogo,
+      prevId: 0, bgTheme:
+        props.bgTheme, textTheme: props.textTheme
+    };
+
     this.timers = [];
   }
 
@@ -171,6 +176,18 @@ class Navbar extends React.Component {
       //   }
       // });
     }
+
+    const regex = /^\/home.*$/;
+    if (regex.test(window.location.pathname)) {
+      const navBtns = document.querySelectorAll(".navbar-btn");
+
+      navBtns.forEach(btn => btn.classList.remove('nav-btn'));
+    } else {
+      const navBtns = document.querySelectorAll(".navbar-btn");
+
+      navBtns.forEach(btn => btn.classList.add('nav-btn'));
+      console.log('on landing page');
+    }
   }
 
   clearAllTimers() {
@@ -269,7 +286,9 @@ class Navbar extends React.Component {
                 </a>
                 <Link to='/home#home' style={{ textDecoration: 'none' }}>
                   <div className="nav-link js-scroll">
-                    Home
+                    <span className="navbar-btn">
+                      Home
+                    </span>
                   </div>
                 </ Link>
               </li>
@@ -278,7 +297,10 @@ class Navbar extends React.Component {
                 </a>
                 <Link to='/home#about' style={{ textDecoration: 'none' }}>
                   <div className="nav-link js js-scroll">
-                    About
+                    <span className="navbar-btn">
+                      About
+                    </span>
+
                   </div>
                 </ Link>
               </li>
@@ -287,7 +309,10 @@ class Navbar extends React.Component {
                 </a>
                 <Link to='/home#work' style={{ textDecoration: 'none' }}>
                   <div className="nav-link js-scroll">
-                    Projects
+                    <span className="navbar-btn">
+                      Projects
+                    </span>
+
                   </div>
                 </ Link>
               </li>
@@ -296,7 +321,9 @@ class Navbar extends React.Component {
                 </a>
                 <Link to='/home#contact' style={{ textDecoration: 'none' }}>
                   <div className="nav-link js-scroll">
-                    Contact
+                    <span className="navbar-btn">
+                      Contact
+                    </span>
                   </div>
                 </ Link>
               </li>
@@ -305,10 +332,11 @@ class Navbar extends React.Component {
                 </a>
                 <a className="nav-link js-scroll" href='https://docs.google.com/document/d/176N_ARpaPOB7V6oNQukdxMZuHvCdLQoHtMp3aXJ-Y6k/edit?usp=sharing'
                   target="_blank"
-                  rel="noopener noreferrer">
-                  <div className="">
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none' }}>
+                  <span className="navbar-btn">
                     Resume
-                  </div>
+                  </span>
                 </a>
               </li>
               <li className="nav-item">
@@ -316,10 +344,12 @@ class Navbar extends React.Component {
                 </a>
                 <a className="nav-link js-scroll" href='https://medium.com/@polalekan'
                   target="_blank"
-                  rel="noopener noreferrer">
-                  <div className="">
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', margingTop: "0px" }}
+                >
+                  <span className="navbar-btn">
                     Blog
-                  </div>
+                  </span>
                 </a>
               </li>
             </ul>

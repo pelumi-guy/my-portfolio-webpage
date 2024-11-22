@@ -11,7 +11,7 @@ const About = () => {
       { id: "asp.net", content: "ASP.NET Core", percentage: "85%", value: "85" },
       {
         id: "sql",
-        content: "SQL (Microsoft SQL Server, Postgres, MySQL)",
+        content: "SQL (MSSQL, Postgres, MySQL)",
         percentage: "75%",
         value: "75"
       },
@@ -67,7 +67,7 @@ const About = () => {
       {
         id: "third-p-about",
         content:
-          "Pelumi&apos;s technical expertise includes ASP.NET, ReactJS, Next.js, TypeScript, Express.js, MongoDB, Python Flask, Microsoft SQL Server, Azure DevOps, and CI/CD pipelines. He thrives on solving complex problems, delivering scalable solutions, and empowering teams to achieve exceptional results.",
+          "Pelumi&apos;s technical expertise includes ASP.NET, ReactJS, Next.js, TypeScript, Express.js, MongoDB, Python Flask, MSSQL, Azure DevOps, and CI/CD pipelines. He thrives on solving complex problems, delivering scalable solutions, and empowering teams to achieve exceptional results.",
       },
       {
         id: "fourth-p-about",

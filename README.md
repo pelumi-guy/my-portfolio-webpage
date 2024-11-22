@@ -31,7 +31,7 @@ Welcome to the GitHub repository for my personal portfolio webpage! This project
 This portfolio was built using the following technologies:
 
 - **Frontend**: ReactJS
-- **Styling**: Sass , Bootstrap
+- **Styling**: Sass, Bootstrap
 - **Hosting**: Netlify
 
 ---

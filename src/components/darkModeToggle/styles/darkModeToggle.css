@@ -375,3 +375,9 @@ input[type=checkbox]:checked+label~section {
         box-shadow: none;
     }
 }
+
+@media (max-width: 768px) {
+    .dark-mode-toggle {
+        bottom: 20px;
+    }
+}

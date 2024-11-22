@@ -51,7 +51,7 @@ const StarWars = () => {
           <p id="subtitle">THE PHANTOM BUG</p>
           <br />
           <p>
-            You&apos;re probably wondering what this is all about. Maybe you got lost looking for memes or a way to illegally stream Star Wars. Either way, you&apos;ve landed on my portfolio webpage. Lucky you!
+            You&apos;re probably wondering what this is all about. Perhaps you got lost looking for memes or a way to illegally stream Star Wars. Either way, you&apos;ve landed on my portfolio webpage. Lucky you!
             <br />
             Once a humble engineer tinkering with diesel engines and spreadsheets, I took a one-way hyperspace jump into the galaxy of software development. Now, I&apos;m weaving C#, Javascript and Python code, battling bugs like Sith Lords, and using "the force" (read: caffeine) to optimize APIs that you&apos;ll probably never notice but can&apos;t live without.
             <br />

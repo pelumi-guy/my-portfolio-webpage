@@ -6,13 +6,14 @@ import Project from './project';
 import pixelart from "../../assets/images/pixel-art-pro.png";
 import emrportal from "../../assets/images/emr-portal.png";
 // import gyb from "../../assets/images/gyb.png";
-import shopitty from "../../assets/images/shopitty.jpg";
+import shopitty from "../../assets/images/shopitty.png";
 import airbnb from "../../assets/images/airbnb.png";
 import simple_shell from "../../assets/images/simple_shell.png"
 import tweet_clipper from "../../assets/images/tweet_clipper.png"
 import novodeus from "../../assets/images/novodeus.png";
-import yard from "../../assets/images/yard.jpg";
+import yard from "../../assets/images/yard.png";
 import binge from "../../assets/images/binge.png";
+import tabs_collector from "../../assets/images/tabs_collector.png";
 
 
 const MyPortfolio = () => {
@@ -58,14 +59,14 @@ const MyPortfolio = () => {
     {
       title: 'Binge',
       thumbnail: binge,
-      stack: 'ASP.NET Core, ReactJS, Microsoft SQL Server',
+      stack: 'ASP.NET Core, ReactJS, MSSQL',
       url: 'https://binge.decagon.dev',
       git_repo: "https://github.com/pelumi-guy/Binge"
     },
     {
       title: 'Yard',
       thumbnail: yard,
-      stack: 'ASP.NET Core, ReactJS, Microsoft SQL Server',
+      stack: 'ASP.NET Core, ReactJS, MSSQL',
       url: 'https://github.com/pelumi-guy/YARD',
       git_repo: "https://github.com/pelumi-guy/YARD"
     },
@@ -86,6 +87,13 @@ const MyPortfolio = () => {
   ]
 
   const miscellaneous = [
+    {
+      title: 'Tabs Collector',
+      thumbnail: tabs_collector,
+      stack: 'Javascript, Chrome Extensions Manifest v3',
+      url: 'https://github.com/pelumi-guy/Tabs-Collector.git',
+      git_repo: "https://github.com/pelumi-guy/Tabs-Collector.git"
+    },
     {
       title: 'TweetClipper',
       thumbnail: tweet_clipper,
